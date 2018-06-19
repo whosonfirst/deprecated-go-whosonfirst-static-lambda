@@ -25,6 +25,9 @@ This is _super_ early work and does not yet support all the features of the `go-
 
 * Support for HTML output.
 
+* Support for toggling output. Currently all `graphics` and `data` endpoints are
+  enabled by default.
+
 ## See also
 
 ### Package specific
@@ -32,8 +35,8 @@ This is _super_ early work and does not yet support all the features of the `go-
 * https://github.com/whosonfirst/go-whosonfirst-static
 * https://github.com/whosonfirst/go-whosonfirst-readwrite
 * https://github.com/whosonfirst/go-whosonfirst-readwrite-s3
+* https://github.com/whosonfirst/algnhsa
 * https://artem.krylysov.com/blog/2018/01/18/porting-go-web-applications-to-aws-lambda/
-* https://github.com/akrylysov/algnhsa
 
 ### AWS
 

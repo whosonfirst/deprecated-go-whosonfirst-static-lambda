@@ -14,8 +14,8 @@ rmdeps:
 build:	fmt bin
 
 deps:
+	@GOPATH=$(GOPATH) go get -u "github.com/whosonfirst/algnhsa"
 	@GOPATH=$(GOPATH) go get -u "github.com/whosonfirst/go-whosonfirst-static"
-	@GOPATH=$(GOPATH) go get -u "github.com/akrylysov/algnhsa"
 	mv src/github.com/whosonfirst/go-whosonfirst-static/vendor/github.com/whosonfirst/go-whosonfirst-readwrite-s3 src/github.com/whosonfirst/
 
 # if you're wondering about the 'rm -rf' stuff below it's because Go is

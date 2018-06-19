@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/akrylysov/algnhsa"
+	"github.com/whosonfirst/algnhsa"
 	"github.com/whosonfirst/go-whosonfirst-static/http"
 	"github.com/whosonfirst/go-whosonfirst-readwrite-s3/config"
 	"github.com/whosonfirst/go-whosonfirst-readwrite-s3/reader"
@@ -29,8 +29,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	// PLEASE FOR TO BE USING A CACHE AND A CACHE READER
 
 	// PLEASE FOR TO BE SETTING THESE FROM ENVIRONMENT VARIABLES
 
