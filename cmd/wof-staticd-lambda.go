@@ -12,9 +12,10 @@ import (
 
 func main() {
 
-	// https://docs.aws.amazon.com/lambda/latest/dg/env_variables.html
+	// PLEASE FOR TO BE READING FROM OTHER SOURCES (GITHUB, HTTP, FS)
 
-	// PLEASE FOR TO BE READING FROM HTTP/GITHUB SOURCE
+	// https://docs.aws.amazon.com/lambda/latest/dg/env_variables.html
+	// WHOSONFIRST_STATIC_S3_DSN="bucket={BUCKET} prefix={PREFIX} region={REGION} credentials={CREDS}"
 
 	s3_dsn := os.Getenv("WHOSONFIRST_STATIC_S3_DSN")
 
