@@ -48,6 +48,8 @@ func main() {
 	var geojson_handler gohttp.Handler
 	var spr_handler gohttp.Handler
 
+	binary_types := make([]string, 0)
+
 	mux := gohttp.NewServeMux()
 
 	ping_handler, err := http.PingHandler()
@@ -78,6 +80,8 @@ func main() {
 
 		png_handler = h
 		mux.Handle("/png/", png_handler)
+
+		binary_types = append(binary_types, "image/png")
 	}
 
 	if enable_all || enable_graphics || enable_svg {
@@ -127,10 +131,7 @@ func main() {
 	}
 
 	opts := new(algnhsa.Options)
-
-	if enable_png {
-		opts.BinaryContentTypes = append(opts.BinaryContentTypes, "image/png")
-	}
+	opts.BinaryContentTypes = binary_types
 
 	algnhsa.ListenAndServe(mux, opts)
 }
