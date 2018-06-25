@@ -2,9 +2,9 @@ package main
 
 import (
 	"github.com/whosonfirst/algnhsa"
-	"github.com/whosonfirst/go-whosonfirst-static/http"
 	"github.com/whosonfirst/go-whosonfirst-readwrite-s3/config"
 	"github.com/whosonfirst/go-whosonfirst-readwrite-s3/reader"
+	"github.com/whosonfirst/go-whosonfirst-static/http"
 	"log"
 	gohttp "net/http"
 	"os"
@@ -126,5 +126,11 @@ func main() {
 		// please write me
 	}
 
-	algnhsa.ListenAndServe(mux, nil)
+	opts := new(algnhsa.Options)
+
+	if enable_png {
+		opts.BinaryContentTypes = append(opts.BinaryContentTypes, "image/png")
+	}
+
+	algnhsa.ListenAndServe(mux, opts)
 }
