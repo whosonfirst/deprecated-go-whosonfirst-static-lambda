@@ -28,6 +28,16 @@ This is _super_ early work and does not yet support all the features of the `go-
 * Support for toggling output. Currently all `graphics` and `data` endpoints are
   enabled by default.
 
+## Really important
+
+In order for requests to produce PNG output (rather than a base64 encoded string) you will need to do two things:
+
+1. Make sure your API Gateway settings list `image/png` as a known and valid binary type:
+
+![](docs/images/20180625-agw-binary.png)
+
+2. Make sure you pass an `Accept: image/png` header when you request the PNG rendering.
+
 ## See also
 
 ### Package specific
@@ -48,4 +58,6 @@ This is _super_ early work and does not yet support all the features of the `go-
 ### General
 
 * https://apimeister.com/2017/05/09/hosting-a-cloudfront-site-with-s3-and-api-gateway.html
+* https://medium.com/@lakshmanLD/lambda-proxy-vs-lambda-integration-in-aws-api-gateway-3a9397af0e6d
 * https://github.com/tilezen/tapalcatl-py#lambda-gotchas
+* https://forums.aws.amazon.com/thread.jspa?threadID=243584
