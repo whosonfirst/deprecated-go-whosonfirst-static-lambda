@@ -30,13 +30,20 @@ This is _super_ early work and does not yet support all the features of the `go-
 
 ## Really important
 
-In order for requests to produce PNG output (rather than a base64 encoded string) you will need to do two things:
+In order for requests to produce PNG output (rather than a base64 encoded string) you will need to do a few things:
 
 1. Make sure your API Gateway settings list `image/png` as a known and valid binary type:
 
 ![](docs/images/20180625-agw-binary.png)
 
-2. Make sure you pass an `Accept: image/png` header when you request the PNG rendering.
+2. If you've put a CloudFront distribution in front of your API Gateway then you
+will to ensure that you blanket enable all HTTP headers or whitelist the
+`Accept:` header , via the `Cache Based on Selected Request Headers` option (for
+the CloudFront behaviour that points to your gateway):
+
+![](docs/images/20180625-cf-cache.png)
+
+3. Make sure you pass an `Accept: image/png` header when you request the PNG rendering.
 
 ## See also
 
@@ -54,6 +61,7 @@ In order for requests to produce PNG output (rather than a base64 encoded string
 * https://docs.aws.amazon.com/lambda/latest/dg/lambda-go-how-to-create-deployment-package.html
 * https://docs.aws.amazon.com/lambda/latest/dg/env_variables.html
 * https://docs.aws.amazon.com/cli/latest/reference/sts/get-session-token.html
+* https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html#header-caching-web
 
 ### General
 
