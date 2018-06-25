@@ -14,6 +14,8 @@ All of this package's dependencies are bundled with the code in the `vendor` dir
 
 ## Important
 
+_This code will be merged back in to `go-whosonfirst-static` once we finish working out all the weird AWS/Lambda -isms..._
+
 This is _super_ early work and does not yet support all the features of the `go-whosonfirst-static` package. Here is a short list of things this package lacks:
 
 * Documentation, specifically about how to set things up as a Lambda
